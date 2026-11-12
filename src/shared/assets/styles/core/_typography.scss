@@ -1,0 +1,87 @@
+@use '../base/vars' as *;
+
+body {
+  font-family: $font-family;
+  font-size: fs('md');
+  font-weight: fw('regular');
+  line-height: 1.4;
+  color: color('text');
+  background: color('bg');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: fw('semibold');
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: fs('2xl');
+}
+h2 {
+  font-size: fs('xl');
+}
+h3 {
+  font-size: fs('lg');
+}
+h4 {
+  font-size: fs('md');
+}
+
+small {
+  font-size: fs('xs');
+}
+
+a {
+  color: color('accent-text');
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.text-hint {
+  color: color('text-hint');
+}
+.text-accent {
+  color: color('accent-text');
+}
+.text-danger {
+  color: color('danger');
+}
+.text-success {
+  color: color('success');
+}
+.text-warning {
+  color: color('warning');
+}
+
+.text-xs {
+  font-size: fs('xs');
+}
+.text-sm {
+  font-size: fs('sm');
+}
+.text-lg {
+  font-size: fs('lg');
+}
+
+.fw-medium {
+  font-weight: fw('medium');
+}
+.fw-semibold {
+  font-weight: fw('semibold');
+}
+.fw-bold {
+  font-weight: fw('bold');
+}
+
+::selection {
+  background: color('accent-soft');
+}

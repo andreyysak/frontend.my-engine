@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use 'base/vars' as *;
+@use 'base/fonts';
+@use 'base/reset';
+@use 'core/typography';
+@use 'core/base';
+
+:root {
+  color-scheme: dark;
+
+  @each $name, $value in $theme {
+    --color-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $radius {
+    --radius-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $spacing {
+    --space-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $shadow {
+    --shadow-#{$name}: #{$value};
+  }
+}
