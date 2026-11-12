@@ -1,5 +1,6 @@
-import { MainLayout } from '@/app/layouts/main-layout/index.tsx'
+import { RouterProvider } from 'react-router/dom'
+import { router } from '@/app/router/router.tsx'
 
 export const App = () => {
-  return <MainLayout />
+  return <RouterProvider router={router} />
 }
