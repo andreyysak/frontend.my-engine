@@ -57,3 +57,74 @@ export const SettingsIcon = () => (
     </g>
   </svg>
 )
+
+export const WalletIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+    <path d="M0 0h24v24H0z" fill="none" />
+    <g
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    >
+      <path d="M3 7a2 2 0 0 1 2-2h13a1 1 0 0 1 1 1v2" />
+      <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2H5a2 2 0 0 1-2-2" />
+      <path d="M16.5 13h.01" />
+    </g>
+  </svg>
+)
+
+export const GaugeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+    <path d="M0 0h24v24H0z" fill="none" />
+    <g
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    >
+      <path d="M4 17a8 8 0 1 1 16 0" />
+      <path d="M12 17l4-5" />
+      <path d="M12 17h.01" />
+    </g>
+  </svg>
+)
+
+export const RoadIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+    <path d="M0 0h24v24H0z" fill="none" />
+    <g
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    >
+      <path d="M8 3L4 21" />
+      <path d="M16 3l4 18" />
+      <path d="M12 4v3" />
+      <path d="M12 10.5v3" />
+      <path d="M12 17v3" />
+    </g>
+  </svg>
+)
+
+export const CoinsIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+    <path d="M0 0h24v24H0z" fill="none" />
+    <g
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M14.5 9.5a2.5 2 0 0 0-2.5-1.5c-1.5 0-2.5.8-2.5 2s1 1.7 2.5 2s2.5.8 2.5 2s-1 2-2.5 2a2.5 2 0 0 1-2.5-1.5" />
+      <path d="M12 6.5V8" />
+      <path d="M12 16v1.5" />
+    </g>
+  </svg>
+)
