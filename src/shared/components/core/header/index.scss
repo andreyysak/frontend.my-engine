@@ -1,0 +1,174 @@
+.header {
+  @include flex($justify: space-between, $align: center);
+  @include surface(color('bg-header'), radius('lg'));
+  padding: space('3') space('5');
+  border: 1px solid color('divider');
+  box-shadow: shadow('sm');
+
+  @include down('md') {
+    padding: space('2') space('4');
+    border-radius: radius('md');
+  }
+
+  &__logo {
+    @include flex($align: center, $gap: space('3'));
+    @include pressable;
+
+    &-img {
+      width: 40px;
+      height: 40px;
+      border-radius: radius('md');
+      box-shadow: shadow('md');
+      transition: transform $transition-base;
+    }
+
+    &-title {
+      font-size: fs('lg');
+      font-weight: fw('bold');
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: color('text');
+    }
+
+    &-accent {
+      color: color('accent-text');
+    }
+  }
+
+  &__navigation {
+    @include flex($align: center, $gap: space('1'));
+
+    a {
+      @include flex($align: center, $gap: space('2'));
+      @include pressable;
+      padding: space('2') space('4');
+      font-size: fs('sm');
+      font-weight: fw('medium');
+      color: color('text-hint');
+      border-radius: radius('full');
+
+      svg {
+        font-size: 20px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: color('text');
+          background: color('ripple');
+          text-decoration: none;
+        }
+      }
+
+      &.active,
+      &[aria-current='page'] {
+        color: color('accent-text');
+        background: color('accent-soft');
+      }
+    }
+
+    @include down('md') {
+      gap: 0;
+
+      a {
+        padding: space('2') space('3');
+      }
+    }
+  }
+
+  &__actions {
+    @include flex($align: center, $gap: space('3'));
+  }
+
+  &__input {
+    @include flex($align: center, $gap: space('2'));
+    width: 220px;
+    padding: 0 space('3');
+    height: 36px;
+    color: color('text-hint');
+    background: color('bg');
+    border: 1px solid color('border');
+    border-radius: radius('full');
+    transition:
+      border-color $transition-fast,
+      background-color $transition-fast;
+
+    svg {
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      height: 100%;
+      font-size: fs('sm');
+      color: color('text');
+      background: none;
+      border: 0;
+      outline: none;
+
+      &::placeholder {
+        color: color('text-hint');
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: color('text-hint');
+      }
+    }
+
+    &:focus-within {
+      color: color('accent-text');
+      border-color: color('accent');
+      box-shadow: 0 0 0 3px color('accent-soft');
+    }
+
+    @include down('lg') {
+      width: 160px;
+    }
+
+    @include down('md') {
+      display: none;
+    }
+  }
+
+  &__link {
+    @include center;
+    @include pressable;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    color: color('text-hint');
+    border-radius: radius('full');
+
+    @media (hover: hover) {
+      &:hover {
+        color: color('text');
+        background: color('ripple');
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__profile {
+    @include center;
+    @include pressable;
+    width: 36px;
+    height: 36px;
+    font-size: fs('sm');
+    font-weight: fw('semibold');
+    color: color('text-on-accent');
+    background: linear-gradient(135deg, color('accent-hover'), color('accent-pressed'));
+    border-radius: radius('full');
+    box-shadow: shadow('sm');
+
+    @media (hover: hover) {
+      &:hover {
+        color: color('text-on-accent');
+        text-decoration: none;
+        filter: brightness(1.1);
+      }
+    }
+  }
+}
