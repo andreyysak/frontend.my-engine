@@ -1,3 +1,10 @@
+import './index.scss'
+import { AnalyticsStats } from '@/features/analytics'
+
 export const AnalyticsPage = () => {
-  return <div></div>
+  return (
+    <section className="analytics">
+      <AnalyticsStats />
+    </section>
+  )
 }

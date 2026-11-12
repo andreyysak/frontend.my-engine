@@ -1,0 +1,64 @@
+$kpi-colors: 'blue', 'green', 'orange', 'cyan', 'red', 'purple', 'indigo', 'gray';
+
+.analytics-kpi {
+  @include flex($align: center, $gap: space('4'));
+  @include surface(color('bg-secondary'), radius('lg'));
+  min-width: 0;
+  padding: space('4') space('5');
+  border: 1px solid color('divider');
+  transition:
+    background-color $transition-base,
+    border-color $transition-base;
+
+  @media (hover: hover) {
+    &:hover {
+      background: color('bg-elevated');
+      border-color: color('border');
+    }
+  }
+
+  &__icon {
+    @include center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+    color: color('text-on-accent');
+    background: gradient('blue');
+    border-radius: radius('md');
+    box-shadow: shadow('sm');
+
+    @each $name in $kpi-colors {
+      &--#{$name} {
+        background: gradient($name);
+      }
+    }
+  }
+
+  &__main {
+    @include flex($direction: column, $gap: space('1'));
+    min-width: 0;
+  }
+
+  &__value {
+    font-size: fs('xl');
+    font-weight: fw('bold');
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: color('text');
+    @include truncate;
+  }
+
+  &__unit {
+    margin-left: space('1');
+    font-size: fs('sm');
+    font-weight: fw('medium');
+    color: color('text-hint');
+  }
+
+  &__title {
+    font-size: fs('sm');
+    color: color('text-hint');
+    @include line-clamp(2);
+  }
+}
