@@ -1,14 +1,14 @@
 @use 'sass:map';
 
 $theme: (
-  'bg': #17212b,
-  'bg-secondary': #232e3c,
+  'bg': #1a2430,
+  'bg-secondary': #20303f,
   'bg-header': #242f3d,
   'bg-elevated': #2b394a,
   'bg-section-sep': #0e1621,
 
   'text': #f5f5f5,
-  'text-hint': #708499,
+  'text-hint': #7b8d9b,
   'text-subtitle': #7d8b99,
   'text-on-accent': #ffffff,
 
@@ -24,6 +24,23 @@ $theme: (
   'danger-soft': rgba(236, 57, 66, 0.16),
   'success-soft': rgba(79, 174, 78, 0.16),
   'warning-soft': rgba(245, 166, 35, 0.16),
+
+  'blue': #0a8dff,
+  'blue-light': #3da8ff,
+  'green': #34d259,
+  'green-light': #4ae367,
+  'orange': #ffa605,
+  'orange-light': #ffc334,
+  'cyan': #30b8ec,
+  'cyan-light': #6bd3ff,
+  'red': #ff4838,
+  'red-light': #ff6156,
+  'gray': #93969d,
+  'gray-light': #a8a5ac,
+  'purple': #c061e3,
+  'purple-light': #ce6bff,
+  'indigo': #6f93ff,
+  'indigo-light': #a192fb,
 
   'divider': rgba(255, 255, 255, 0.08),
   'border': rgba(255, 255, 255, 0.12),
@@ -109,6 +126,10 @@ $z: (
     @error 'Unknown colour token "#{$name}"';
   }
   @return var(--color-#{$name});
+}
+
+@function gradient($name) {
+  @return linear-gradient(180deg, color('#{$name}-light'), color($name));
 }
 
 @function radius($name) {
