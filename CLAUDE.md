@@ -10,6 +10,10 @@ Current stage: **no backend** — the focus is markup/layout (верстка) an
 
 Planned backend: **Firebase** (Auth + Firestore, Cloud Functions/FCM for reminders later). There will be **no REST API backend**. Until Firebase is wired in, keep data access behind a separate layer (functions like `getCars()` / `addFuelLog()`) that returns mock data, with types in `src/shared/types`, so swapping in Firestore only replaces that layer and components stay untouched.
 
+## Tasks / tickets
+
+Tickets and task descriptions live in Notion (the "Projects" page). The link is intentionally not stored here because the repository is public; ask the owner for it if needed.
+
 ## Working agreement
 
 - The owner writes the application code themselves. Do not implement features/components unprompted.

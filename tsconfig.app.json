@@ -20,7 +20,8 @@
       "@/*": ["./src/*"],
       "@shared/*": ["./src/shared/*"],
       "@assets/*": ["./src/shared/assets/*"],
-      "@styles/*": ["./src/shared/assets/styles/*"]
+      "@styles/*": ["./src/shared/assets/styles/*"],
+      "@mocks/*": ["./src/shared/mocks/*"]
     },
 
     /* Linting */

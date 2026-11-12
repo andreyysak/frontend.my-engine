@@ -11,7 +11,8 @@ export default defineConfig({
       '@shared': src('shared'),
       '@assets': src('shared/assets'),
       '@styles': src('shared/assets/styles'),
-      '@': src(''),
+      '@mocks': src('mocks'),
+      '@': src('')
     },
   },
   css: {
