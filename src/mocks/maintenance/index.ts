@@ -1,0 +1,90 @@
+import type { Maintenance } from '@shared/types'
+
+export const maintenances: Maintenance[] = [
+  {
+    id: 'maint-1',
+    carId: 'car-1',
+    date: '2026-03-10',
+    odometer: 76500,
+    items: [
+      { type: 'oil_change', cost: 1800 },
+      { type: 'oil_filter', cost: 350 },
+    ],
+    totalCost: 2150,
+  },
+  {
+    id: 'maint-2',
+    carId: 'car-1',
+    date: '2023-06-15',
+    odometer: 42000,
+    items: [
+      { type: 'brake_pads', cost: 3200 },
+      { type: 'brake_fluid', cost: 450 },
+    ],
+    totalCost: 3650,
+    note: 'Front brake pads and brake fluid replacement',
+  },
+  {
+    id: 'maint-3',
+    carId: 'car-1',
+    date: '2025-01-20',
+    odometer: 65000,
+    items: [{ type: 'air_filter', cost: 400 }],
+    totalCost: 400,
+  },
+  {
+    id: 'maint-4',
+    carId: 'car-1',
+    date: '2025-03-05',
+    odometer: 66200,
+    items: [
+      { type: 'oil_change', cost: 1700 },
+      { type: 'oil_filter', cost: 320 },
+    ],
+    totalCost: 2020,
+  },
+  {
+    id: 'maint-5',
+    carId: 'car-1',
+    date: '2025-10-18',
+    odometer: 70500,
+    items: [{ type: 'tires', cost: 600, note: 'Swapped to winter tires' }],
+    totalCost: 600,
+  },
+  {
+    id: 'maint-6',
+    carId: 'car-1',
+    date: '2025-11-30',
+    odometer: 72000,
+    items: [{ type: 'cabin_filter', cost: 450 }],
+    totalCost: 450,
+  },
+  {
+    id: 'maint-7',
+    carId: 'car-2',
+    date: '2024-10-01',
+    odometer: 28100,
+    items: [{ type: 'brake_fluid', cost: 700 }],
+    totalCost: 700,
+  },
+  {
+    id: 'maint-8',
+    carId: 'car-2',
+    date: '2025-05-12',
+    odometer: 33600,
+    items: [
+      { type: 'cabin_filter', cost: 500 },
+      { type: 'tires', cost: 700, note: 'Swapped to summer tires' },
+    ],
+    totalCost: 1200,
+  },
+  {
+    id: 'maint-9',
+    carId: 'car-2',
+    date: '2026-02-10',
+    odometer: 38900,
+    items: [{ type: 'hv_battery_check', cost: 1500 }],
+    totalCost: 1500,
+    note: 'Traction battery diagnostics, health 94%',
+  },
+]
