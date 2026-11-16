@@ -21,7 +21,8 @@
       "@shared/*": ["./src/shared/*"],
       "@assets/*": ["./src/shared/assets/*"],
       "@styles/*": ["./src/shared/assets/styles/*"],
-      "@mocks/*": ["./src/shared/mocks/*"]
+      "@mocks/*": ["./src/mocks/*"],
+      "@api/*": ["./src/shared/api/*"]
     },
 
     /* Linting */

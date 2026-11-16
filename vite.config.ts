@@ -12,6 +12,7 @@ export default defineConfig({
       '@assets': src('shared/assets'),
       '@styles': src('shared/assets/styles'),
       '@mocks': src('mocks'),
+      '@api': src('shared/api'),
       '@': src(''),
     },
   },

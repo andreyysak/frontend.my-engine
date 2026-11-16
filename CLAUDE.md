@@ -52,9 +52,17 @@ Environment files `.env`, `.env.*` (dev/stage/prod) are gitignored; only `.env.e
 
 Defined in two places that must be kept in sync: `resolve.alias` in `vite.config.ts` and `paths` in `tsconfig.app.json`.
 
-`@` → `src`, `@shared` → `src/shared`, `@assets` → `src/shared/assets`, `@styles` → `src/shared/assets/styles`.
+`@` → `src`, `@shared` → `src/shared`, `@assets` → `src/shared/assets`, `@styles` → `src/shared/assets/styles`, `@mocks` → `src/mocks`, `@api` → `src/shared/api`.
 
-Shared code lives in `src/shared` (`assets/{fonts,img,styles}`, `components`, `types`, `utils`).
+Shared code lives in `src/shared` (`api`, `assets/{fonts,img,styles}`, `components`, `types`, `utils`).
+
+## Data layer / mocks
+
+- `src/mocks` holds the mock data, one folder per entity (`car`, `fuel`, `trip`, `maintenance`, `reminder`), re-exported from `src/mocks/index.ts` (`cars`, `fuels`, `trips`, `maintenances`, `reminders`). All mock data is in English for now.
+- `src/shared/api` is the data access layer, one folder per entity, re-exported from `src/shared/api/index.ts`. Components call only these functions and never import `@/mocks` directly, so swapping in Firestore only replaces this layer.
+- Read functions: `getCars()`, `getCarById(id)` (returns `null` when not found), `getFuelLogs(carId)`, `getTrips(carId)`, `getMaintenance(carId)`. Reminders have no read function yet.
+- Every function is async and awaits `delay()` from `src/shared/utils/delay.ts` (random 300-800 ms) so loading states are visible.
+- Reminder status (`ok` / `soon` / `overdue`) is not stored in mocks: it is derived from the latest `Maintenance` per type, the reminder `interval` / `notifyBefore` and the car `mileage`.
 
 ## Styling / design system
 
