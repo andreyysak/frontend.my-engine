@@ -56,6 +56,14 @@ Defined in two places that must be kept in sync: `resolve.alias` in `vite.config
 
 Shared code lives in `src/shared` (`api`, `assets/{fonts,img,styles}`, `components`, `types`, `utils`).
 
+## App structure / state
+
+- `src/app` holds only global app setup: `router`, `layouts`, `providers` (`QueryProvider`, composed in `AppProviders` and wrapped around the router in `App.tsx`). No domain logic or data in `app`.
+- `src/features/<name>` is one module per feature (`components`, `store`, `queries`, `hooks`), exposed through its `index.ts`; other code imports only from `@/features/<name>`.
+- `src/features/cars` is the base feature that other features may import: `useCars()` (TanStack Query over `getCars()` from `@api`, key `carsKeys.all`), `useSelectedCarStore` (Zustand, holds only `selectedCarId`), `useSelectedCar()` (derives `car` from the list: selected id, else the first car, else `null`) and the `CarList` component.
+- State split: server data (cars, fuel, trips, ...) goes through TanStack Query on top of the `@api` layer; client UI state goes into Zustand. Mutations should invalidate the matching `carsKeys`-style query key.
+- `Car` has no `name`; the display title is built from `brand`, `model`, `year`.
+
 ## Data layer / mocks
 
 - `src/mocks` holds the mock data, one folder per entity (`car`, `fuel`, `trip`, `maintenance`, `reminder`), re-exported from `src/mocks/index.ts` (`cars`, `fuels`, `trips`, `maintenances`, `reminders`). All mock data is in English for now.
