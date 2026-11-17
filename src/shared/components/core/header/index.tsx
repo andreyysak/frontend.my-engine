@@ -7,6 +7,7 @@ import {
   SearchIcon,
   SettingsIcon,
 } from '@shared/components/ui/icons.tsx'
+import { NavLink } from 'react-router'
 
 export const Header = () => {
   return (
@@ -19,18 +20,18 @@ export const Header = () => {
       </div>
 
       <nav className="header__navigation">
-        <a href="#">
+        <NavLink to="/fuel">
           <FuelIcon />
           Fuel
-        </a>
-        <a href="#">
+        </NavLink>
+        <NavLink to="/maintenance">
           <MaintenanceIcon />
           Maintenance
-        </a>
-        <a href="#">
+        </NavLink>
+        <NavLink to="/garage">
           <GarageIcon />
-          Maintenance
-        </a>
+          Garage
+        </NavLink>
       </nav>
 
       <div className="header__actions">
@@ -38,9 +39,9 @@ export const Header = () => {
           <SearchIcon />
           <input type="text" placeholder="Search in system" />
         </div>
-        <a href="#" className="header__link">
+        <NavLink to="/settings" className="header__link">
           <SettingsIcon />
-        </a>
+        </NavLink>
         <a href="#" className="header__profile">
           AS
         </a>

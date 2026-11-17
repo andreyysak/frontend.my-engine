@@ -62,6 +62,7 @@ Shared code lives in `src/shared` (`api`, `assets/{fonts,img,styles}`, `componen
 - `src/features/<name>` is one module per feature (`components`, `store`, `queries`, `hooks`), exposed through its `index.ts`; other code imports only from `@/features/<name>`.
 - `src/features/cars` is the base feature that other features may import: `useCars()` (TanStack Query over `getCars()` from `@api`, key `carsKeys.all`), `useSelectedCarStore` (Zustand, holds only `selectedCarId`), `useSelectedCar()` (derives `car` from the list: selected id, else the first car, else `null`) and the `CarList` component.
 - State split: server data (cars, fuel, trips, ...) goes through TanStack Query on top of the `@api` layer; client UI state goes into Zustand. Mutations should invalidate the matching `carsKeys`-style query key.
+- Routes (`src/app/router/router.tsx`, all children of `MainLayout`): `/` (`AnalyticsPage`), `/garage`, `/garage/:carId`, `/maintenance`, `/fuel`, `/trips`, `/settings`, `*` (`NotFoundPage`). Pages live in `src/pages/<name>` (`index.tsx` + `index.scss`, BEM block named after the folder); most are empty stubs for now. `Header` navigation uses `NavLink`.
 - `Car` has no `name`; the display title is built from `brand`, `model`, `year`.
 
 ## Data layer / mocks
